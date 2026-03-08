@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Spor Merkezi</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f2f2f2;
+}
+
+header{
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#333;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav li{
+padding:15px 20px;
+cursor:pointer;
+color:white;
+}
+
+nav li:hover{
+background:#e63946;
+}
+
+section{
+display:none;
+padding:40px;
+text-align:center;
+}
+
+.active{
+display:block;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:15px;
+display:inline-block;
+width:220px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input{
+display:block;
+margin:10px auto;
+padding:10px;
+width:220px;
+}
+
+button{
+padding:10px 20px;
+background:#e63946;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>POWER FITNESS SPOR MERKEZİ</h1>
+</header>
+
+<nav>
+<ul>
+<li onclick="showPage('anasayfa')">Anasayfa</li>
+<li onclick="showPage('urunler')">Ürünler</li>
+<li onclick="showPage('hizmetler')">Hizmetlerimiz</li>
+<li onclick="showPage('kadro')">Kadromuz</li>
+<li onclick="showPage('uyelik')">Üyelik</li>
+<li onclick="showPage('iletisim')">Bize Ulaşın</li>
+</ul>
+</nav>
+
+<section id="anasayfa" class="active">
+<h2>Hoş Geldiniz</h2>
+<p>Power Fitness spor merkezine hoş geldiniz. Sağlıklı ve güçlü bir yaşam için bizimle spor yapın.</p>
+</section>
+
+<section id="urunler">
+<h2>Ürünler</h2>
+
+<div class="card">
+<h3>Protein Tozu</h3>
+<p>Kas gelişimi için kaliteli protein.</p>
+</div>
+
+<div class="card">
+<h3>Dambıl Seti</h3>
+<p>Evde spor için ideal ekipman.</p>
+</div>
+
+<div class="card">
+<h3>Spor Eldiveni</h3>
+<p>Güvenli antrenman sağlar.</p>
+</div>
+
+</section>
+
+<section id="hizmetler">
+<h2>Hizmetlerimiz</h2>
+
+<div class="card">Fitness Programı</div>
+<div class="card">Kişisel Antrenör</div>
+<div class="card">Diyet Danışmanlığı</div>
+<div class="card">Grup Dersleri</div>
+
+</section>
+
+<section id="kadro">
+<h2>Kadromuz</h2>
+
+<div class="card">
+<h3>Ahmet Yılmaz</h3>
+<p>Fitness Eğitmeni</p>
+</div>
+
+<div class="card">
+<h3>Ayşe Demir</h3>
+<p>Pilates Eğitmeni</p>
+</div>
+
+<div class="card">
+<h3>Mehmet Kaya</h3>
+<p>Vücut Geliştirme Uzmanı</p>
+</div>
+
+</section>
+
+<section id="uyelik">
+
+<h2>Üyelik Formu</h2>
+
+<form onsubmit="uyeOl(event)">
+
+<input type="text" placeholder="Adınız" required>
+
+<input type="email" placeholder="Email" required>
+
+<input type="tel" placeholder="Telefon">
+
+<button>Üye Ol</button>
+
+</form>
+
+<p id="mesaj"></p>
+
+</section>
+
+<section id="iletisim">
+
+<h2>Bize Ulaşın</h2>
+
+<p>📍 Ankara</p>
+<p>📞 0555 555 55 55</p>
+<p>📧 info@powerfitness.com</p>
+
+</section>
+
+<footer>
+<p>© 2026 Power Fitness</p>
+</footer>
+
+<script>
+
+function showPage(pageId){
+
+let pages=document.querySelectorAll("section");
+
+pages.forEach(function(page){
+page.classList.remove("active");
+});
+
+document.getElementById(pageId).classList.add("active");
+
+}
+
+function uyeOl(event){
+
+event.preventDefault();
+
+document.getElementById("mesaj").innerText =
+"Üyeliğiniz başarıyla oluşturuldu!";
+
+}
+
+</script>
+
+</body>
+</html>
